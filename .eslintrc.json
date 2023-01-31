@@ -1,9 +1,55 @@
 {
-  "extends": ["next/core-web-vitals", "next", "eslint:recommended"],
+  "extends": [
+    "next/core-web-vitals",
+    "next",
+    "eslint:recommended",
+    "plugin:storybook/recommended"
+  ],
   "globals": {
     "React": "readonly"
   },
   "rules": {
     "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }]
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx",
+        "*stories.@(js|jsx|ts|tsx|mjs|cjs|mdx)"
+      ],
+      "rules": {
+        "react/prop-types": "off"
+        // "storybook/require-default-props": "off",
+        // "storybook/require-prop-types": "off",
+        // "storybook/require-storybook-addon": "off",
+        // "storybook/require-storybook-addon-notes": "off",
+        // "storybook/require-storybook-addon-backgrounds": "off",
+        // "storybook/require-storybook-addon-knobs": "off",
+        // "storybook/require-storybook-addon-links": "off",
+        // "storybook/require-storybook-addon-options": "off",
+        // "storybook/require-storybook-addon-storysource": "off",
+        // "storybook/require-storybook-addon-viewport": "off",
+        // "storybook/require-storybook-addon-xd-designs": "off",
+        // "storybook/require-storybook-addon-docs": "off",
+        // "storybook/require-storybook-addon-actions": "off",
+        // "storybook/require-storybook-addon-console": "off",
+        // "storybook/require-storybook-addon-storyshots": "off",
+        // "storybook/require-storybook-addon-storyshots-puppeteer": "off",
+        // "storybook/require-storybook-addon-storyshots-image": "off"
+      }
+      // "extends": ["next/core-web-vitals", "next", "eslint:recommended", "plugin:storybook/recommended", "plugin:@typescript-eslint/recommended"],
+      // "parser": "@typescript-eslint/parser",
+      // "parserOptions": {
+      //   "project": "./tsconfig.json"
+      // },
+      // "plugins": ["@typescript-eslint"],
+      // "rules": {
+      //   "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }],
+      //   "@typescript-eslint/no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }]
+      // }
+    }
+  ]
 }
